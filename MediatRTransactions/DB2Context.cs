@@ -5,7 +5,7 @@ using System.IO;
 
 namespace MediatRTransactions
 {
-    public class DB2Context : DbContext
+    public class DB2Context : DbContext, IDbContext2
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,6 +21,6 @@ namespace MediatRTransactions
         }
 
         public string ConnectionString { get; set; }
-        DbSet<Names> Names { get; set; }
+        public DbSet<Names> Names { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace MediatRTransactions
 {
-    public class DB1Context : DbContext, IDbContext1
+    public class DB21Context : DbContext, IDbContext21
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -15,7 +15,7 @@ namespace MediatRTransactions
                    .SetBasePath(Directory.GetCurrentDirectory())
                    .AddJsonFile("appsettings.json")
                    .Build();
-                this.ConnectionString = configuration.GetConnectionString("DB1Connection");
+                this.ConnectionString = configuration.GetConnectionString("DB21Connection");
                 optionsBuilder.UseSqlServer(ConnectionString);
             }
         }
